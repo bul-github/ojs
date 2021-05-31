@@ -1,0 +1,27 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-05-21T00:00:00-00:00\n"
+"PO-Revision-Date: 2021-05-21T00:00:00-00:00\n"
+"Language: \n"
+
+msgid "plugins.auth.ldap.ul.displayName"
+msgstr "Protocole LDAP UL"
+
+msgid "plugins.auth.ldap.ul.description"
+msgstr "Ce plugiciel permet l'authentification et la synchronisation de comptes d'utilisateurs au moyen d'une source de données LDAP UL."
+
+msgid "plugins.auth.ldap.ul.user.no.valid.email"
+msgstr "Le compte LDAP ne contient pas d'adresse courriel valide. Veuillez contacter l'administrateur du site pour obtenir de l'aide."
+
+msgid "plugins.auth.ldap.ul.user.already.binded"
+msgstr "Un compte LDAP est déjà lié au compte OJS possèdant votre adresse courriel. Veuillez contacter l'administrateur du site pour obtenir de l'aide."
+
+msgid "plugins.auth.ldap.ul.user.username.already.exists"
+msgstr "Un compte OJS possèdant le même nom d'utilisateur existe déjà. Veuillez contacter l'administrateur du site pour obtenir de l'aide."

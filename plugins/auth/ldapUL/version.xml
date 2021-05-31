@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
+
+<!--
+  * plugins/auth/ldapUL/version.xml
+  *
+  * Copyright (c) 2014-2021 Simon Fraser University
+  * Copyright (c) 2003-2021 John Willinsky
+  * Copyright (c) 2021 Université Laval
+  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+  *
+  * Plugin version information.
+  -->
+<version>
+	<application>ldapUL</application>
+	<type>plugins.auth</type>
+	<release>1.0.0.0</release>
+	<date>2021-05-21</date>
+	<lazy-load>0</lazy-load>
+	<sitewide>1</sitewide>
+	<class>LDAPULAuthPlugin</class>
+</version>
