@@ -23,5 +23,13 @@
 		{/foreach}
 	</ul>
 {else}
-	{translate key="plugins.importexport.users.importComplete"}
+	{if $userImportWarnings}
+		{translate key="plugins.importexport.users.importPartlyComplete"}
+		<h2>{translate key="common.warning"}</h2>
+		{foreach from=$userImportWarnings item=userImportWarning}
+			<p>{$userImportWarning}</p>
+		{/foreach}
+	{else}
+		{translate key="plugins.importexport.users.importComplete"}
+	{/if}
 {/if}

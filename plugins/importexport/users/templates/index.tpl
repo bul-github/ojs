@@ -54,6 +54,15 @@
 						{/fbvFormSection}
 					{/fbvFormArea}
 
+					{fbvFormSection title="plugins.importexport.users.importFormat" list=true}
+						{fbvElement type="radio" name="importFormat" id="formatOJS3" checked=$institutional|compare:"ojs3" label="plugins.importexport.users.importFormat.ojs3" value="ojs3"}
+						{fbvElement type="radio" name="importFormat" id="formatOJS2" checked=$institutional|compare:"ojs2" label="plugins.importexport.users.importFormat.ojs2" value="ojs2"}
+						{fbvElement type="radio" name="importFormat" id="formatCSV" checked=$institutional|compare:"csv" label="plugins.importexport.users.importFormat.csv" value="csv"}
+					{/fbvFormSection}
+					{fbvFormSection title="plugins.importexport.users.confirmationEmail" list=true}
+						{fbvElement type="checkbox" name="sendConfirmationEmail" id="sendConfirmationEmail" checked=0 label="plugins.importexport.users.confirmationEmail.send" value=1}
+					{/fbvFormSection}
+
 					{fbvFormButtons submitText="plugins.importexport.users.import.importUsers" hideCancel="true"}
 				{/fbvFormArea}
 			</form>

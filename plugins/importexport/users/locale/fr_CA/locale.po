@@ -127,3 +127,45 @@ msgstr ""
 
 msgid "plugins.importexport.users.uploadFile"
 msgstr "Veuillez téléverser un fichier sous « Importer » pour continuer."
+
+msgid "plugins.importexport.users.importPartlyComplete"
+msgstr "Importation effectuée, mais des erreurs ont été rencontrées. Les utilisateurs dont les noms et adresses électroniques ne sont pas utilisés ont été importés. Voir les avertissements ci-bas."
+
+msgid "plugins.importexport.users.importFormat"
+msgstr "Format du fichier d'importation"
+
+msgid "plugins.importexport.users.importFormat.ojs3"
+msgstr "OJS 3"
+
+msgid "plugins.importexport.users.importFormat.ojs2"
+msgstr "OJS 2"
+
+msgid "plugins.importexport.users.importFormat.csv"
+msgstr "CSV"
+
+msgid "plugins.importexport.users.confirmationEmail"
+msgstr "Envoyer un courriel de confirmation à tous les usagers importés avec un mot de passe temporaire"
+
+msgid "plugins.importexport.users.confirmationEmail.send"
+msgstr "Envoyer"
+
+msgid "plugins.importexport.users.userImportWarning.username"
+msgstr "Le nom d'utilisateur \"{$username}\" existe déjà et ne sera pas importé."
+
+msgid "plugins.importexport.users.userImportWarning.email"
+msgstr "Le courriel \"{$email}\" existe déjà et ne sera pas importé."
+
+msgid "plugins.importexport.users.userImportWarning.dataValidation"
+msgstr "Le champ \"{$field}\" contient une donnée invalide pour la ligne \"{$line}\"."
+
+msgid "plugins.importexport.users.userImportWarning.malformedXml"
+msgstr "Le fichier XML d'importation est malformé."
+
+msgid "plugins.importexport.users.userImportWarning.nothingImported"
+msgstr "Aucun enregistrement n'a été importé."
+
+msgid "plugins.importexport.users.userImportWarning.xmlDataValidation"
+msgstr "Le champ \"{$field}\" contient une donnée invalide à la ligne {$line} du fichier XML."
+
+msgid "plugins.importexport.users.userImportWarning.xmlDataValidation.missing"
+msgstr "Le champ \"{$field}\" est manquant à la ligne {$line} du fichier XML."
