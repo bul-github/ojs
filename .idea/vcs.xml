@@ -23,7 +23,6 @@
     <mapping directory="$PROJECT_DIR$/plugins/generic/staticPages" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/plugins/generic/tinymce" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/plugins/generic/usageStats" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/plugins/importexport/crossref" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/plugins/reports/counter/classes/COUNTER" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/plugins/reports/reviewReport" vcs="Git" />
   </component>
