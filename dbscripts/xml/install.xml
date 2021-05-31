@@ -41,6 +41,7 @@
 
 	<!-- OJS schema -->
 	<migration class="classes.migration.OJSMigration" />
+	<migration class="classes.migration.ULMigration" />
 
 	<!-- Other install tasks -->
 	<code function="createData"/>
