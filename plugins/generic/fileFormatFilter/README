@@ -1,0 +1,6 @@
+FileFormatFilter Plugin for Open Journal Systems v3.x
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+This plugin scans the uploaded files and cancel the operation if the file extension doesn't correspond
+to the accepted ones. Each article genre can be configured with it's own list of white or black listed file
+extensions.

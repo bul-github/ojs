@@ -1,0 +1,42 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-05-16T00:00:00-00:00\n"
+"PO-Revision-Date: 2021-05-16T00:00:00-00:00\n"
+"Language: \n"
+
+msgid "plugins.generic.fileFormatFilter.name"
+msgstr "Plugiciel pour les filtres des formats de fichier"
+
+msgid "plugins.generic.fileFormatFilter.description"
+msgstr "Ce plugiciel permet, pour chaque élément, la création d'une liste des formats de fichier acceptés ou refusés."
+
+msgid "plugins.generic.fileFormatFilter.settings.title"
+msgstr "Liste de tous les formats de fichier à inclure ou à exclure."
+
+msgid "plugins.generic.fileFormatFilter.settings.include"
+msgstr "Inclure"
+
+msgid "plugins.generic.fileFormatFilter.settings.exclude"
+msgstr "Exclure"
+
+msgid "plugins.generic.fileFormatFilter.settings.hint"
+msgstr "Les formats doivent être séparés par le caractère « , »."
+
+msgid "plugins.generic.fileFormatFilter.settings.placeholder"
+msgstr "Exemple : pdf, doc, docx"
+
+msgid "plugins.generic.fileFormatFilter.uploadFailed.format.exclusion"
+msgstr "Le fichier n'a pu être transmis car le format n'est pas supporté pour ce type de document. Voici la liste des formats proscrits : {$formats}."
+
+msgid "plugins.generic.fileFormatFilter.uploadFailed.format.inclusion"
+msgstr "Le fichier n'a pu être transmis car le format n'est pas supporté pour ce type de document. Voici la liste des formats autorisés : {$formats}."
+
+msgid "plugins.generic.fileFormatFilter.uploadFailed.format.empty"
+msgstr "Le fichier n'a pu être transmis car il ne possède aucun format."
