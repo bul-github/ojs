@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3b48937c-e4f8-4ac2-9397-974992af45f7" name="IIS (DEV)" url="http://bul-dv-ojs01.bibl.ulaval.ca:8080/ojs">
+        <fileTransfer mountedRoot="Z:\ojs" accessType="MOUNT" port="0" />
+      </webServer>
+      <webServer id="8f4d80c0-588a-4cc2-9665-788ed270c9f2" name="IIS (LOCAL)" url="https://localhost:65443/ojs">
+        <fileTransfer mountedRoot="C:\inetpub\wwwroot\ojs" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>

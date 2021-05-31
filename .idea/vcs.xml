@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CommitMessageInspectionProfile">
+    <profile version="1.0">
+      <inspection_tool class="CommitMessageSpellChecking" enabled="false" level="TYPO" enabled_by_default="false" />
+    </profile>
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/docs/manual" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lib/pkp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lib/pkp/lib/counterBots" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lib/ui-library" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/blocks/browse" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/blocks/makeSubmission" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/generic/citationStyleLanguage" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/generic/customBlockManager" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/generic/googleAnalytics" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/generic/googleScholar" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/generic/lensGalley" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/generic/orcidProfile" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/generic/pdfJsViewer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/generic/staticPages" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/generic/tinymce" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/generic/usageStats" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/importexport/crossref" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/reports/counter/classes/COUNTER" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugins/reports/reviewReport" vcs="Git" />
+  </component>
+</project>
