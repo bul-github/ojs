@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data SYSTEM "../../../lib/pkp/dtd/xmlData.dtd">
+
+<!--
+  * dbscripts/xml/upgrade/ulaval_update.xml
+  *
+  * Copyright (c) 2013-2021 Simon Fraser University
+  * Copyright (c) 2003-2021 John Willinsky
+  * Copyright (c) 2021 Université Laval
+  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+  *
+  * Update queries for OJS 3.3.0.X
+  -->
+
+<data>
+	<sql><!-- Gossip value should be contextual, preserve the old ones in the default context. -->
+		<query>INSERT INTO private_notes (context_id, user_id, note) SELECT 0, user_id, gossip FROM users WHERE gossip IS NOT NULL AND gossip != ''</query>
+		<!-- <query>ALTER TABLE users DROP COLUMN gossip</query> -->
+	</sql>
+	<sql><!-- Insert default values for the user statuses. -->
+		<query>INSERT INTO statuses (locale_key, seq) VALUES ('user.status.student', 1)</query>
+		<query>INSERT INTO statuses (locale_key, seq) VALUES ('user.status.professor', 2)</query>
+		<query>INSERT INTO statuses (locale_key, seq) VALUES ('user.status.other', 3)</query>
+	</sql>
+</data>

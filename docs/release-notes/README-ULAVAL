@@ -1,0 +1,20 @@
+OJS 3.3.0.6 Release Notes
+Git tag: 3_3_0-6
+
+Release date: June 1, 2021
+===========================
+
+Configuration Changes (config.inc.php)
+--------------------------------------
+
+New parameter added to avoid sending any email (when it's Off) for debugging purposes.
+- email.allow_send_email
+
+New parameter added to reduce the number of logs when the parameter "debug.show_stacktrace" is On.
+The logs for emails are not shown when the parameter below is On.
+- debug.hide_email_stacktrace
+
+3.3.0-6 Build
+-------------
+
+- Migrated all user gossips into a contextual table that has been renamed private_notes.
