@@ -141,23 +141,46 @@ class LDAPULAuthPlugin extends AuthPlugin {
 		$phone = isset($userInfo['telephoneNumber']) ? $userInfo['telephoneNumber'][0] : null;
 		$country = 'CA';
 
-		$user = UserUtil::createUser($this->getRequest(),
-			array(
-				'username' => $username,
-				'email' => $email,
-				'givenName' => $givenName,
-				'familyName' => $familyName,
-				'affiliation' => $affiliation,
-				'phone' => $phone,
-				'ldap' => $username,
-				'country' => $country
-			)
-		);
+		if (!$password) {
+			$password = Validation::generatePassword(20);
+		}
 
-		// Add a markup to know when we need to add a default role for the user.
-		$user->{"isFromLdap"} = true;
+		// The multilingual user data (givenName, familyName and affiliation) will be saved
+		// in the current UI locale and copied in the site's primary locale too.
+		$site = $this->getRequest()->getSite();
+		$sitePrimaryLocale = $site->getPrimaryLocale();
+		$currentLocale = AppLocale::getLocale();
+
+		$userDao = DAORegistry::getDAO('UserDAO');
+
+		$user = $userDao->newDataObject();
+		$user->setUsername($username);
+		$user->setGivenName($givenName, $currentLocale);
+		$user->setFamilyName($familyName, $currentLocale);
+		$user->setEmail($email);
+		$user->setCountry($country);
+		$user->setAffiliation($affiliation, $currentLocale);
+		$user->setPhone($phone);
+		$user->setLdap($username);
+
+		if ($sitePrimaryLocale != $currentLocale) {
+			$user->setGivenName($givenName, $sitePrimaryLocale);
+			$user->setFamilyName($familyName, $sitePrimaryLocale);
+			$user->setAffiliation($affiliation, $sitePrimaryLocale);
+		}
+
+		$user->setPassword(Validation::encryptCredentials($username, $password));
+		$user->setDateRegistered(Core::getCurrentDate());
+		$user->setInlineHelp(1);
+
+		$userDao->insertObject($user);
+
+		$user = !$user->getId() ? null : $user;
 
 		if ($user) {
+			// Add a markup to know when we need to add a default role for the user.
+			$user->{"isFromLdap"} = true;
+
 			return true;
 		}
 
