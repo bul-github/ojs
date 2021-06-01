@@ -13,9 +13,9 @@
   -->
 
 <data>
-	<sql><!-- Gossip value should be contextual, preserve the old ones in the default context. -->
-		<query>INSERT INTO private_notes (context_id, user_id, note) SELECT 0, user_id, gossip FROM users WHERE gossip IS NOT NULL AND gossip != ''</query>
-		<!-- <query>ALTER TABLE users DROP COLUMN gossip</query> -->
+	<sql><!-- Gossip value should be contextual, preserve the old ones in existing contexts. -->
+		<query>INSERT INTO private_notes (context_id, user_id, note) SELECT DISTINCT ug.context_id, u.user_id, u.gossip FROM ojs_ts.users u JOIN ojs_ts.user_user_groups uug ON uug.user_id = u.user_id JOIN ojs_ts.user_groups ug ON ug.user_group_id = uug.user_group_id WHERE u.gossip IS NOT NULL AND u.gossip != ''</query>
+		<query>ALTER TABLE users DROP COLUMN gossip</query>
 	</sql>
 	<sql><!-- Insert default values for the user statuses. -->
 		<query>INSERT INTO statuses (locale_key, seq) VALUES ('user.status.student', 1)</query>
