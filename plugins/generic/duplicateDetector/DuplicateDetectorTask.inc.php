@@ -24,6 +24,17 @@ require_once('classes/DocConversion.php');
 class DuplicateDetectorTask extends ScheduledTask {
 
 	/**
+	 * Constructor.
+	 * @param $args array
+	 */
+	function __construct($args = array()) {
+		import('plugins.generic.duplicateDetector.classes.DuplicateDetectorDAO');
+		$duplicateDetectorDAO = new DuplicateDetectorDAO();
+		DAORegistry::registerDAO('DuplicateDetectorDAO', $duplicateDetectorDAO);
+		parent::__construct($args);
+	}
+
+	/**
 	 * @copydoc ScheduledTask::getName()
 	 */
 	function getName() {

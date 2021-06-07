@@ -17,7 +17,7 @@
 use Smalot\PdfParser\Parser;
 
 import('lib.pkp.classes.plugins.GenericPlugin');
-import('plugins.generic.duplicateDetector.classes.DuplicateDetectorDAO');
+
 
 require_once('classes/DocConversion.php');
 
@@ -34,8 +34,8 @@ class DuplicateDetectorPlugin extends GenericPlugin {
 	function register($category, $path, $mainContextId = null) {
 		if (parent::register($category, $path, $mainContextId)) {
 			if ($this->getEnabled()) {
+				import('plugins.generic.duplicateDetector.classes.DuplicateDetectorDAO');
 				$duplicateDetectorDAO = new DuplicateDetectorDAO();
-
 				DAORegistry::registerDAO('DuplicateDetectorDAO', $duplicateDetectorDAO);
 
 				HookRegistry::register('SubmissionFile::edit', array(&$this, 'executeForFile'));

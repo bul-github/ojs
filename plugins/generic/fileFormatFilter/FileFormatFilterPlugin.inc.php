@@ -16,7 +16,6 @@
  */
 
 import('lib.pkp.classes.plugins.GenericPlugin');
-import('plugins.generic.fileFormatFilter.classes.FileFilterDAO');
 
 use Illuminate\Support\MessageBag;
 
@@ -31,8 +30,8 @@ class FileFormatFilterPlugin extends GenericPlugin {
 	function register($category, $path, $mainContextId = null) {
 		if (parent::register($category, $path, $mainContextId)) {
 			if ($this->getEnabled($mainContextId)) {
+				import('plugins.generic.fileFormatFilter.classes.FileFilterDAO');
 				$fileFilterDao = new FileFilterDAO();
-
 				DAORegistry::registerDAO('FileFilterDAO', $fileFilterDao);
 
 				// Required to fetch the templates data.
