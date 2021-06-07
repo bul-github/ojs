@@ -22,4 +22,9 @@
 		<query>INSERT INTO statuses (locale_key, seq) VALUES ('user.status.professor', 2)</query>
 		<query>INSERT INTO statuses (locale_key, seq) VALUES ('user.status.other', 3)</query>
 	</sql>
+	<sql><!-- Add default email templates for duplicates detection. -->
+		<query>INSERT INTO email_templates_default (email_key, can_disable, can_edit, from_role_id, to_role_id) VALUES ('DUPLICATE_DETECTION_NOTIFICATION', 0, 1, NULL, NULL);</query>
+		<query>INSERT INTO email_templates_default_data VALUES ('DUPLICATE_DETECTION_NOTIFICATION', 'fr_CA', 'Avis de détection de doublon potentiel', 'Un doublon potentiel vient d''être détecté. La soumission suivante faite dans la revue "{$contextName1}" {$submissionUrl1} est semblable à la soumission faite dans "{$contextName2}" {$submissionUrl2}<br /><br />Le doublon a été identifié à partir des: {$where}.<br />Ratio de similarité: {$similarityRatio}.<br />', 'Ce courriel est envoyé au contact principal de la revue afin d''aviser qu''un article doublon a été détecté.');</query>
+		<query>INSERT INTO email_templates_default_data VALUES ('DUPLICATE_DETECTION_NOTIFICATION', 'en_US', 'Notice of potential duplicate', 'A potential duplicate has been detected. The following submission in "{$contextName1}" {$submissionUrl1} is similar to a submission made in "{$contextName2}" {$submissionUrl2}<br /><br />Duplicate has been identified in: {$where}.<br />Similarity ratio: {$similarityRatio}.<br />', 'This email is sent to the journal main contact as a notice that an article duplicate has been detected.');</query>
+	</sql>
 </data>

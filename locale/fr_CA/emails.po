@@ -1274,3 +1274,16 @@ msgstr ""
 
 msgid "emails.announcement.subject"
 msgstr "{$title}"
+
+msgid "emails.duplicateDetectionNotification.subject"
+msgstr "Avis de détection de doublon potentiel"
+
+msgid "emails.duplicateDetectionNotification.description"
+msgstr "Ce courriel est envoyé au contact principal de la revue afin d'aviser qu'un article doublon a été détecté."
+
+msgid "emails.duplicateDetectionNotification.body"
+msgstr ""
+"Un doublon potentiel vient d'être détecté. La soumission suivante faite dans la revue \"{$contextName1}\" {$submissionUrl1} est semblable à la soumission faite dans \"{$contextName2}\" {$submissionUrl2}<br />\n"
+"<br />\n"
+"Le doublon a été identifié à partir des: {$where}.<br />\n"
+"Ratio de similarité: {$similarityRatio}.<br />\n"

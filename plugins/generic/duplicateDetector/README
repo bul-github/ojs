@@ -1,0 +1,12 @@
+Duplicate Detector Plugin for OJS 3
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+(C) 2021 Université Laval
+
+Please find enclosed a Duplicate Detector plugin for PKP's OJS. It checks submission files for existing duplicates, and
+if found creates and send a report to the Journal main contact.
+
+How to install:
+---------------
+This installs like a normal plugin.
+
+Enjoy!

@@ -1067,3 +1067,16 @@ msgstr ""
 
 msgid "emails.announcement.description"
 msgstr "This email is sent when a new announcement is created."
+
+msgid "emails.duplicateDetectionNotification.subject"
+msgstr "Notice of potential duplicate"
+
+msgid "emails.duplicateDetectionNotification.description"
+msgstr "This email is sent to the journal main contact as a notice that an article duplicate has been detected."
+
+msgid "emails.duplicateDetectionNotification.body"
+msgstr ""
+"A potential duplicate has been detected. The following submission in \"{$contextName1}\" {$submissionUrl1} is similar to a submission made in \"{$contextName2}\" {$submissionUrl2}<br />\n"
+"<br />\n"
+"Duplicate has been identified in: {$where}.<br />\n"
+"Similarity ratio: {$similarityRatio}.<br />\n"
