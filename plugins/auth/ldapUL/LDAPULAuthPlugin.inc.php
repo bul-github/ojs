@@ -15,7 +15,6 @@
  */
 
 import('lib.pkp.classes.plugins.AuthPlugin');
-import('classes.user.UserUtil');
 
 include('config.inc');
 
