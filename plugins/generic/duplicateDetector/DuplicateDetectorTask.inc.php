@@ -59,6 +59,10 @@ class DuplicateDetectorTask extends ScheduledTask {
 		$duplicateDetectorDAO = DAORegistry::getDAO('DuplicateDetectorDAO');
 		$duplicateDetectors = $duplicateDetectorDAO->getAll()->toArray();
 
+		if (empty($duplicateDetectors)) {
+			return $numberOfDuplicates;
+		}
+
 		$contextDao = Application::getContextDAO();
 		$contexts = $contextDao->getAll()->toArray();
 
@@ -127,8 +131,6 @@ class DuplicateDetectorTask extends ScheduledTask {
 				if ($percentage >= DUPLICATE_DETECTION_METADATA_RATIO_THRESHOLD) {
 					$message =  "Submission $duplicateDetectorSubmissionId and $submissionId Metadata similarity: $simChars ($percentage %) $metadata";
 
-					echo "$message\n";
-
 					$this->addExecutionLogEntry($message, SCHEDULED_TASK_MESSAGE_TYPE_NOTICE);
 				}
 			}
@@ -160,6 +162,11 @@ class DuplicateDetectorTask extends ScheduledTask {
 
 			$submissionFileId = $duplicateDetector->getSubmissionFileId();
 			$submissionFileDuplicateDetector = $submissionFileDao->getRevisions($submissionFileId)->first();
+
+			if (!$submissionFileDuplicateDetector) {
+				return $percentage;
+			}
+
 			$filePathDuplicateDetector = $submissionFileDuplicateDetector->path;
 			$filePathDuplicateDetector = preg_replace('/\/\//', '/', $filePathDuplicateDetector);
 			$duplicateDetectorExcerpt = $duplicateDetector->getExcerpt();
@@ -202,13 +209,7 @@ class DuplicateDetectorTask extends ScheduledTask {
 					}
 
 					if ($percentage >= DUPLICATE_DETECTION_FILE_RATIO_THRESHOLD) {
-						if (!$submissionFileDuplicateDetector) {
-							return $percentage;
-						}
-
 						$message = "Submission $duplicateDetectorSubmissionId and $submissionId File similarity: $simChars ($percentage %) $filePathDuplicateDetector";
-
-						echo "$message\n";
 
 						$this->addExecutionLogEntry($message, SCHEDULED_TASK_MESSAGE_TYPE_NOTICE);
 					}
@@ -275,7 +276,7 @@ class DuplicateDetectorTask extends ScheduledTask {
 		$contextName2 = $context2->getLocalizedName();
 
 		import('lib.pkp.classes.mail.MailTemplate');
-		$mail = new MailTemplate('DUPLICATE_DETECTION_NOTIFICATION');
+		$mail = new MailTemplate('DUPLICATE_DETECTION_NOTIFICATION', null, $context);
 		$mail->setReplyTo(null);
 		$mail->addRecipient($contactEmail, $contactName);
 		$mail->assignParams(array(
