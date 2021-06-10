@@ -67,4 +67,5 @@
 	<email key="ANNOUNCEMENT" can_edit="1" can_disable="0" from_role_id="16" to_role_id="1048576" subject="emails.announcement.subject" description="emails.announcement.description" body="emails.announcement.body"/>
 	<email key="DUPLICATE_DETECTION_NOTIFICATION" can_edit="1" can_disable="0" subject="emails.duplicateDetectionNotification.subject" description="emails.duplicateDetectionNotification.description" body="emails.duplicateDetectionNotification.body"/>
 	<email key="ASK_FOR_REVIEWER_ROLE" can_edit="1" can_disable="0" subject="emails.askForReviewerRole.subject" description="emails.askForReviewerRole.description" body="emails.askForReviewerRole.body"/>
+	<email key="AUTHOR_REVISIONS_REMIND_AUTO" can_edit="1" can_disable="0" to_role_id="65536" subject="emails.authorRevisionsRemindAuto.subject" description="emails.authorRevisionsRemindAuto.description" body="emails.authorRevisionsRemindAuto.body"/>
 </emails>

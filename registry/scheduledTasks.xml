@@ -39,4 +39,8 @@
 		<descr>Send automated reminders about subscription expiry.</descr>
 		<frequency day="1"/>
 	</task>
+	<task class="lib.pkp.classes.task.SubmissionReminder">
+		<descr>Send automated reminders to authors to complete their revisions.</descr>
+		<frequency hour="0"/>
+	</task>
 </scheduled_tasks>
