@@ -435,3 +435,9 @@ msgstr "Image de la page couverture"
 
 msgid "issues.submissions.issueIds"
 msgstr "Assignée au numéro"
+
+msgid "editor.review.resetReviewDecision"
+msgstr "Réinitialiser"
+
+msgid "editor.review.resetDecision"
+msgstr "Voulez-vous vraiment réinitialiser la décision de l'évaluateur?"

@@ -42,6 +42,70 @@ class ReviewerGridHandler extends PKPReviewerGridHandler {
 		}
 		return parent::reviewRead($args, $request);
 	}
+
+	/**
+	 * Reset the reviewer's decision, notify the user and log the event.
+	 * @param $args array
+	 * @param $request PKPRequest
+	 * @return JSONMessage
+	 */
+	function resetReviewDecision($args, $request) {
+		$reviewAssignment = $this->getAuthorizedContextObject(ASSOC_TYPE_REVIEW_ASSIGNMENT);
+		$submission = $this->getSubmission();
+
+		$reviewAssignment->setDeclined(false);
+		$reviewAssignment->setDateConfirmed(null);
+		$reviewAssignment->setStep(1);
+
+		$context = $request->getContext();
+		$numWeeksPerResponse = $context->getData('numWeeksPerResponse');
+		if ($numWeeksPerResponse === 0) {
+			// It seems the true default number is 3 weeks.
+			$numWeeksPerResponse = 3;
+		}
+
+		$numWeeksPerReview = $context->getData('numWeeksPerReview');
+		if ($numWeeksPerReview === 0 || $numWeeksPerReview <= $numWeeksPerResponse) {
+			// At least one week after the maximum response date.
+			$numWeeksPerReview = $numWeeksPerResponse + 1;
+		}
+
+		$dateToResponse = date('Y/m/d', strtotime(sprintf('+%d week', $numWeeksPerResponse)));
+		$dateToReview = date('Y/m/d', strtotime(sprintf('+%d week', $numWeeksPerReview)));
+
+		$reviewAssignment->setDateResponseDue($dateToResponse);
+		$reviewAssignment->setDateDue($dateToReview);
+
+		$reviewAssignmentDao = DAORegistry::getDAO('ReviewAssignmentDAO');
+		$reviewAssignmentDao->updateObject($reviewAssignment);
+
+		$userDao = DAORegistry::getDAO('UserDAO');
+		$reviewer = $userDao->getById($reviewAssignment->getReviewerId());
+		$user = $request->getUser();
+
+		$notificationMgr = new NotificationManager();
+		$notificationMgr->createTrivialNotification(
+			$user->getId(),
+			NOTIFICATION_TYPE_SUCCESS,
+			array('contents' => __('notification.type.resetReviewDecision'))
+		);
+
+		import('lib.pkp.classes.log.SubmissionLog');
+		import('classes.log.SubmissionEventLogEntry');
+		SubmissionLog::logEvent(
+			$request,
+			$submission,
+			SUBMISSION_LOG_REVIEW_RESET_DECISION,
+			'log.editor.resetReviewDecision',
+			array(
+				'reviewerName' => $reviewer->getFullName(),
+				'editorName' => $user->getFullName(),
+				'submissionId' => $submission->getId()
+			)
+		);
+
+		return DAO::getDataChangedEvent($reviewAssignment->getId());
+	}
 }
 
 

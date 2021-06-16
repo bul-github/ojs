@@ -427,3 +427,9 @@ msgstr "The public identifier '{$publicIdentifier}' already exists for another o
 
 msgid "editor.article.coverImage"
 msgstr "Cover Image"
+
+msgid "editor.review.resetReviewDecision"
+msgstr "Reinitialize"
+
+msgid "editor.review.resetDecision"
+msgstr "Are you sure you want to reset the reviewer's decision?"
