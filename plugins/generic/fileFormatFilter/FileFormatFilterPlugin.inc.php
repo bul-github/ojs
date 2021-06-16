@@ -39,7 +39,6 @@ class FileFormatFilterPlugin extends GenericPlugin {
 
 				HookRegistry::register('Templates::Controllers::Grid::Settings::Genre::Form::genreForm', array($this, 'showFileFormatFilterSettings'));
 				HookRegistry::register('GenreForm::execute', array(&$this, 'saveFileFormatFilterSettings'));
-				//HookRegistry::register('FileManager::uploadFile', array(&$this, 'filterFileByFormat'));
 				HookRegistry::register('SubmissionFile::validate', array(&$this, 'filterFileByFormat'));
 				HookRegistry::register('FileUploadWizardHandler::uploadFile', array(&$this, 'filterFileByFormat'));
 			}
@@ -241,7 +240,8 @@ class FileFormatFilterPlugin extends GenericPlugin {
 			if (!$errors) {
 				$errors = new MessageBag();
 			}
-			$errors->add('fileFormat', $message);
+			// The name is mandatory to show the correct error message inside the edit genre popup.
+			$errors->add('genreId', $message);
 			return true;
 		}
 
