@@ -55,7 +55,6 @@ class ReviewerGridHandler extends PKPReviewerGridHandler {
 
 		$reviewAssignment->setDeclined(false);
 		$reviewAssignment->setDateConfirmed(null);
-		$reviewAssignment->setStep(1);
 
 		$context = $request->getContext();
 		$numWeeksPerResponse = $context->getData('numWeeksPerResponse');
@@ -78,6 +77,13 @@ class ReviewerGridHandler extends PKPReviewerGridHandler {
 
 		$reviewAssignmentDao = DAORegistry::getDAO('ReviewAssignmentDAO');
 		$reviewAssignmentDao->updateObject($reviewAssignment);
+
+		$reviewerSubmissionDao = DAORegistry::getDAO('ReviewerSubmissionDAO');
+		$reviewerSubmission = $reviewerSubmissionDao->getReviewerSubmission($reviewAssignment->getId());
+
+		$reviewerSubmission->setStep(1);
+
+		$reviewerSubmissionDao->updateObject($reviewerSubmission);
 
 		$userDao = DAORegistry::getDAO('UserDAO');
 		$reviewer = $userDao->getById($reviewAssignment->getReviewerId());
