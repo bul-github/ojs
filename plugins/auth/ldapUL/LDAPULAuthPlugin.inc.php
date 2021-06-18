@@ -138,6 +138,9 @@ class LDAPULAuthPlugin extends AuthPlugin {
 		$familyName = isset($userInfo['sn']) ? $userInfo['sn'][0] : null;
 		$affiliation = 'Université Laval'; //$userInfo['department'][0];
 		$phone = isset($userInfo['telephoneNumber']) ? $userInfo['telephoneNumber'][0] : null;
+		if ($phone) {
+			$phone = preg_replace('poste', '#', $phone);
+		}
 		$country = 'CA';
 
 		if (!$password) {
