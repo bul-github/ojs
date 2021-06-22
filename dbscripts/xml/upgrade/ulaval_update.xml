@@ -17,11 +17,11 @@
 		<query>INSERT INTO private_notes (context_id, user_id, note) SELECT DISTINCT ug.context_id, u.user_id, u.gossip FROM ojs_ts.users u JOIN ojs_ts.user_user_groups uug ON uug.user_id = u.user_id JOIN ojs_ts.user_groups ug ON ug.user_group_id = uug.user_group_id WHERE u.gossip IS NOT NULL AND u.gossip != ''</query>
 		<query>ALTER TABLE users DROP COLUMN gossip</query>
 	</sql>
-	<sql><!-- Insert default values for the user statuses. -->
-		<query>INSERT INTO statuses (locale_key, seq) VALUES ('user.status.student', 1)</query>
-		<query>INSERT INTO statuses (locale_key, seq) VALUES ('user.status.professor', 2)</query>
-		<query>INSERT INTO statuses (locale_key, seq) VALUES ('user.status.other', 3)</query>
-	</sql>
+<!--	<sql>&lt;!&ndash; Insert default values for the user statuses. &ndash;&gt;-->
+<!--		<query>INSERT INTO statuses (locale_key, seq) VALUES ('user.status.student', 1)</query>-->
+<!--		<query>INSERT INTO statuses (locale_key, seq) VALUES ('user.status.professor', 2)</query>-->
+<!--		<query>INSERT INTO statuses (locale_key, seq) VALUES ('user.status.other', 3)</query>-->
+<!--	</sql>-->
 <!--	<sql>&lt;!&ndash; Add default email template for duplicates detection. &ndash;&gt;-->
 <!--		<query>INSERT INTO email_templates_default (email_key, can_disable, can_edit, from_role_id, to_role_id) VALUES ('DUPLICATE_DETECTION_NOTIFICATION', 0, 1, NULL, NULL)</query>-->
 <!--		<query>INSERT INTO email_templates_default_data VALUES ('DUPLICATE_DETECTION_NOTIFICATION', 'fr_CA', 'Avis de détection de doublon potentiel', 'Un doublon potentiel vient d''être détecté. La soumission suivante faite dans la revue "{$contextName1}" {$submissionUrl1} est semblable à la soumission faite dans "{$contextName2}" {$submissionUrl2}<br /><br />Le doublon a été identifié à partir des: {$where}.<br />Ratio de similarité: {$similarityRatio}.<br />', 'Ce courriel est envoyé au contact principal de la revue afin d''aviser qu''un article doublon a été détecté.')</query>-->
