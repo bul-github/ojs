@@ -12,11 +12,11 @@
   * Update queries for OJS 3.3.0.X
   -->
 
-<data>
-	<sql><!-- Gossip value should be contextual, preserve the old ones in existing contexts. -->
-		<query>INSERT INTO private_notes (context_id, user_id, note) SELECT DISTINCT ug.context_id, u.user_id, u.gossip FROM ojs_ts.users u JOIN ojs_ts.user_user_groups uug ON uug.user_id = u.user_id JOIN ojs_ts.user_groups ug ON ug.user_group_id = uug.user_group_id WHERE u.gossip IS NOT NULL AND u.gossip != ''</query>
-		<query>ALTER TABLE users DROP COLUMN gossip</query>
-	</sql>
+<!--<data>-->
+<!--	<sql>&lt;!&ndash; Gossip value should be contextual, preserve the old ones in existing contexts. &ndash;&gt;-->
+<!--		<query>INSERT INTO private_notes (context_id, user_id, note) SELECT DISTINCT ug.context_id, u.user_id, u.gossip FROM ojs_ts.users u JOIN ojs_ts.user_user_groups uug ON uug.user_id = u.user_id JOIN ojs_ts.user_groups ug ON ug.user_group_id = uug.user_group_id WHERE u.gossip IS NOT NULL AND u.gossip != ''</query>-->
+<!--		<query>ALTER TABLE users DROP COLUMN gossip</query>-->
+<!--	</sql>-->
 <!--	<sql>&lt;!&ndash; Insert default values for the user statuses. &ndash;&gt;-->
 <!--		<query>INSERT INTO statuses (locale_key, seq) VALUES ('user.status.student', 1)</query>-->
 <!--		<query>INSERT INTO statuses (locale_key, seq) VALUES ('user.status.professor', 2)</query>-->
@@ -37,4 +37,4 @@
 <!--		<query>INSERT INTO email_templates_default_data VALUES('AUTHOR_REVISIONS_REMIND_AUTO', 'en_US', 'Notification on author revisions delay', 'Hi,<br /><br />The author of the submission, &quot;{$submissionTitle}&quot; for {$contextName} has not yet send a revised version of the article.<br /><br />This email has been automatically generated and sent with the passing of the expiration date.<br />Submission URL: {$submissionUrl}<br /><br />{$editorialContactSignature}', 'This email is automatically sent when the response from an author for a revisions request is late (see workflow parameters under tab Evaluation). Scheduled tasks must be enabled and configured (see the site configuration file).')</query>-->
 <!--		<query>INSERT INTO email_templates_default_data VALUES('AUTHOR_REVISIONS_REMIND_AUTO', 'fr_CA', 'Avis de retard sur une demande de révisions', 'Bonjour,<br /><br />L''auteur de l''article intitulé &laquo; {$submissionTitle} &raquo; pour {$contextName} n''a pas fourni la version révisée de son texte dans les délais prescrits.<br /><br />Ce courriel a été envoyé automatiquement car la date d''échéance est passée.<br /><br />URL de la soumission : {$submissionUrl}<br /><br />{$editorialContactSignature}', 'Ce courriel est envoyé automatiquement quand la réponse d''un auteur à une demande de révisions tarde à arriver (voir les paramètres du flux des travaux sous l''onglet Évaluation). Les tâches planifiées doivent être activées et configurées (voir le fichier de Configuration du site).')</query>-->
 <!--	</sql>-->
-</data>
+<!--</data>-->

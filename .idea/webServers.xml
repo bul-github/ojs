@@ -8,6 +8,9 @@
       <webServer id="8f4d80c0-588a-4cc2-9665-788ed270c9f2" name="IIS (LOCAL)" url="https://localhost:65443/ojs">
         <fileTransfer mountedRoot="C:\inetpub\wwwroot\ojs" accessType="MOUNT" port="0" />
       </webServer>
+      <webServer id="e177f669-46b4-4e08-8fc8-12faa98e7f99" name="IIS (TS)" url="http://bul-ts-ojs01.bibl.ulaval.ca:8080/ojs">
+        <fileTransfer mountedRoot="Y:\ojs" accessType="MOUNT" port="0" />
+      </webServer>
     </option>
   </component>
 </project>
