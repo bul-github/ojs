@@ -11,6 +11,9 @@
       <webServer id="e177f669-46b4-4e08-8fc8-12faa98e7f99" name="IIS (TS)" url="http://bul-ts-ojs01.bibl.ulaval.ca:8080/ojs">
         <fileTransfer mountedRoot="Y:\ojs" accessType="MOUNT" port="0" />
       </webServer>
+      <webServer id="715d8e45-82fb-4db6-9a47-34ab12b26ab7" name="IIS (PROD)" url="https://revues.ulaval.ca/ojs">
+        <fileTransfer mountedRoot="X:\ojs" accessType="MOUNT" port="0" />
+      </webServer>
     </option>
   </component>
 </project>
