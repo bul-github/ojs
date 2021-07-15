@@ -197,13 +197,10 @@ class DuplicateDetectorTask extends ScheduledTask {
 							$excerpt = mb_substr($text, 0, EXCERPT_LENGTH);
 							$simChars = similar_text($duplicateDetectorExcerpt, $excerpt, $percentage);
 						} catch (\Exception $e) {
-							$file = __FILE__;
-
-							$sourceFile = $e->getFile();
-							$sourceLine = $e->getLine();
-
-							error_log('PdfParser getText() Exception ' . $sourceFile . ' Line ' . $sourceLine . ' : ' . $e->getMessage() . ' (called from ' . $file . ')');
-
+							//$file = __FILE__;
+							//$sourceFile = $e->getFile();
+							//$sourceLine = $e->getLine();
+							//error_log('PdfParser getText() Exception ' . $sourceFile . ' Line ' . $sourceLine . ' : ' . $e->getMessage() . ' (called from ' . $file . ')');
 							return $percentage;
 						}
 					}
