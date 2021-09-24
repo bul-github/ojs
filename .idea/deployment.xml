@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="On explicit save action" deleteMissingItems="true" createEmptyFolders="true" persistUploadOnCheckin="false" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;*.hprof;*.pyc;.gitignore;.eslintignore;.tfignore;.gitmodules;.gitattributes;.gitkeep;.github">
+  <component name="PublishConfigData" autoUpload="On explicit save action" deleteMissingItems="true" createEmptyFolders="true" persistUploadOnCheckin="false" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;*.hprof;*.pyc;.gitignore;.eslintignore;.tfignore;.gitmodules;.gitattributes;.gitkeep;.github;.vs">
     <serverData>
       <paths name="IIS (DEV)">
         <serverdata>
@@ -17,9 +17,10 @@
             <excludedPath path="lib\pkp\lib\components" />
             <excludedPath path="plugins\generic\citationStyleLanguage\lib" />
             <excludedPath path="plugins\paymethod\paypal\vendor" />
-            <excludedPath path=".vs" />
             <excludedPath path="styles\build.css" />
             <excludedPath path="js\build.js" />
+            <excludedPath local="true" path="$PROJECT_DIR$/tests" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cypress" />
           </excludedPaths>
         </serverdata>
       </paths>
@@ -38,9 +39,10 @@
             <excludedPath path="lib\pkp\lib\components" />
             <excludedPath path="plugins\generic\citationStyleLanguage\lib" />
             <excludedPath path="plugins\paymethod\paypal\vendor" />
-            <excludedPath path=".vs" />
             <excludedPath path="styles\build.css" />
             <excludedPath path="js\build.js" />
+            <excludedPath local="true" path="$PROJECT_DIR$/tests" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cypress" />
           </excludedPaths>
         </serverdata>
       </paths>
@@ -59,9 +61,10 @@
             <excludedPath path="lib\pkp\lib\components" />
             <excludedPath path="plugins\generic\citationStyleLanguage\lib" />
             <excludedPath path="plugins\paymethod\paypal\vendor" />
-            <excludedPath path=".vs" />
             <excludedPath path="styles\build.css" />
             <excludedPath path="js\build.js" />
+            <excludedPath local="true" path="$PROJECT_DIR$/tests" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cypress" />
           </excludedPaths>
         </serverdata>
       </paths>
@@ -80,9 +83,10 @@
             <excludedPath path="lib\pkp\lib\components" />
             <excludedPath path="plugins\generic\citationStyleLanguage\lib" />
             <excludedPath path="plugins\paymethod\paypal\vendor" />
-            <excludedPath path=".vs" />
             <excludedPath path="styles\build.css" />
             <excludedPath path="js\build.js" />
+            <excludedPath local="true" path="$PROJECT_DIR$/tests" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cypress" />
           </excludedPaths>
         </serverdata>
       </paths>
